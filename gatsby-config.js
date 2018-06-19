@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Mark Ridgway',
+    tagline: 'Web Developer',
+    description: 'Mark Ridgway - Web Developer',
+    keywords: 'Mark Ridgway, Web Developer, Javascript, React, Angular'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

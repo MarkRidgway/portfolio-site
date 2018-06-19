@@ -24,14 +24,20 @@ const Content = styled.div`
   padding: 1.45rem 1.0875rem;
 `;
 
+const Nav = styled.ul``;
+
 const Title = styled.h1`
   margin: 0;
-  color: white;
+  color: #fff;
 
   a{
     color: inherit;
     text-decoration: none;
   }
+`;
+
+const Tagline = styled.h2`
+  color: #fff;
 `;
 
 Wrapper.defaultProps = defaultTheme;
@@ -45,6 +51,7 @@ class Header extends Component {
           <Title>
             <Link to="/">{ this.props.siteTitle }</Link>
           </Title>
+          <Tagline>{ this.props.siteTagline }</Tagline>
         </Content>
       </Wrapper>
     );
