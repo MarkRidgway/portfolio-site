@@ -26,25 +26,30 @@ const ProjectImage = styled.div`
   }
 `;
 
-// class IndexPage extends Component{
-const IndexPage = ({ data }) => (
-  <div>
-    <h1>Past Projects</h1>
-    { displayProjects(data.allMarkdownRemark.edges) }
-  </div>
-);
+class ProjectList extends Component {
+  render(){
+    const projects = this.props.data.allMarkdownRemark.edges;
 
-function displayProjects(projects){
-  return projects.map( (project) => {
-    return (
-      <Project key={ project.node.frontmatter.title.replace(' ', '-').toLowerCase() }>
-        <h2>{ project.node.frontmatter.title }</h2>
-        <ProjectImage>
-          <img src={ project.node.frontmatter.projectImage.publicURL } />
-        </ProjectImage>
-      </Project>
+    return(
+      <div>
+        <h1>Past Projects</h1>
+        { this.displayProjects(projects) }
+      </div>
     )
-  });
+  }
+
+  displayProjects(projects){
+    return projects.map( (project) => {
+      return (
+        <Project key={ project.node.frontmatter.title.replace(' ', '-').toLowerCase() }>
+          <h2>{ project.node.frontmatter.title }</h2>
+          <ProjectImage>
+            <img src={ project.node.frontmatter.projectImage.publicURL } />
+          </ProjectImage>
+        </Project>
+      )
+    });
+  }
 }
 
 export const query = graphql`
@@ -69,4 +74,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage
+export default ProjectList
