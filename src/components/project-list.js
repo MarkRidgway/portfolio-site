@@ -8,7 +8,9 @@ class ProjectList extends Component {
       <Grid>
         <Row>
           { this.props.projects.map( (project) => (
-            <Col key={ project.key }>
+            <Col
+              key={ project.key }
+              xs={12} md={6}>
               <ProjectCard
                 title={ project.title }
                 image={ project.image } />

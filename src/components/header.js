@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid'
+import { Grid, Col, Row } from 'react-styled-flexboxgrid'
+import Branding from './branding';
 
 const defaultTheme = {
   theme: {
@@ -14,22 +14,7 @@ const defaultTheme = {
 const Wrapper = styled.header`
   background: ${props => props.theme.colors.primary};
   margin-bottom: 1.45rem;
-`;
-
-const Nav = styled.ul``;
-
-const Title = styled.h1`
-  margin: 0;
-  color: #fff;
-
-  a{
-    color: inherit;
-    text-decoration: none;
-  }
-`;
-
-const Tagline = styled.h2`
-  color: #fff;
+  padding: 1em 0;
 `;
 
 Wrapper.defaultProps = defaultTheme;
@@ -37,16 +22,20 @@ Wrapper.defaultProps = defaultTheme;
 class Header extends Component {
   render(){
     return(
-      <Grid>
-        <Wrapper>
-            <Row>
-              <Title>
-                <Link to="/">{ this.props.siteTitle }</Link>
-              </Title>
-              <Tagline>{ this.props.siteTagline }</Tagline>
-            </Row>
-        </Wrapper>
-      </Grid>
+      <Wrapper>
+        <Grid>
+          <Row>
+            <Col xs={12} md>
+              <Branding
+                title={this.props.siteTitle}
+                tagline={this.props.siteTagline} />
+            </Col>
+            <Col xs={12} md>
+              <p>Navigation</p>
+            </Col>
+          </Row>
+        </Grid>
+      </Wrapper>
     );
   }
 }
