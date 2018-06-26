@@ -12,7 +12,7 @@ const defaultTheme = {
 };
 
 const Wrapper = styled.header`
-  background: ${props => props.theme.colors.primary};
+  border-bottom: 10px solid ${props => props.theme.colors.primary};
   margin-bottom: 1.45rem;
   padding: 1em 0;
 `;
@@ -25,13 +25,10 @@ class Header extends Component {
       <Wrapper>
         <Grid>
           <Row>
-            <Col xs={12} md>
+            <Col xs={12}>
               <Branding
                 title={this.props.siteTitle}
                 tagline={this.props.siteTagline} />
-            </Col>
-            <Col xs={12} md>
-              <p>Navigation</p>
             </Col>
           </Row>
         </Grid>
