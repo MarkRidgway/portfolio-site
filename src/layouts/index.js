@@ -31,14 +31,17 @@ Layout.propTypes = {
   children: PropTypes.func,
 };
 
-export default Layout;
-
 export const query = graphql`
-  query SiteTitleQuery {
+  query SiteDataQuery {
     site {
       siteMetadata {
         title
+        tagline
+        description
+        keywords
       }
     }
   }
 `;
+
+export default Layout;
