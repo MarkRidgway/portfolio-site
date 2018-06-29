@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid'
-import Branding from './branding';
+import Branding from './branding/branding';
+import Navigation from './navigation';
 
 const defaultTheme = {
   theme: {
@@ -29,6 +30,9 @@ class Header extends Component {
               <Branding
                 title={this.props.siteTitle}
                 tagline={this.props.siteTagline} />
+            </Col>
+            <Col xs={12}>
+              <Navigation />
             </Col>
           </Row>
         </Grid>

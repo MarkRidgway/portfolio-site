@@ -7,15 +7,15 @@ const theme = {
     outerMargin: 2, // rem
     mediaQuery: 'only screen',
     container: {
-      sm: 46, // rem
-      md: 61, // rem
+      sm: 26, // rem
+      md: 47, // rem
       lg: 80  // rem
     },
     breakpoints: {
       xs: 0,  // em
-      sm: 48, // em
-      md: 64, // em
-      lg: 75  // em
+      sm: 26, // em
+      md: 47, // em
+      lg: 80  // em
     }
   },
   colors: {
