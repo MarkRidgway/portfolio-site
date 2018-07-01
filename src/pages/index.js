@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
-import ProjectCard from '../components/project-card';
+import ProjectList from '../components/project-list';
 
 // class IndexPage extends Component{
 class IndexPage extends Component {
   render(){
-    const projects = this.props.data.allMarkdownRemark.edges;
-
     return(
       <div>
-        { projects.map( (project) => (
-          <ProjectCard
-            key={ project.node.frontmatter.title.replace(' ', '-')}
-            title={ project.node.frontmatter.title }
-            image={ project.node.frontmatter.projectImage.publicURL } />
-        ))}
+        <ProjectList projects={ this.projects() } />
       </div>
     )
+  }
+
+  // cleans proejct data
+  projects(){
+    const projectsData = this.props.data.allMarkdownRemark.edges;
+
+    return projectsData.reduce( (projectsArray, project) => {
+      let key = project.node.frontmatter.title.replace(' ', '-').toLowerCase();
+      let title = project.node.frontmatter.title;
+      let image = project.node.frontmatter.projectImage.publicURL;
+
+      projectsArray.push({key, title, image});
+
+      return projectsArray;
+    }, []);
   }
 }
 
