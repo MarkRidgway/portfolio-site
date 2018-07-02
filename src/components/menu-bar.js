@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import NavigationList from './navigation-list';
+import HamburgerIcon from './hambuger-icon';
 
 const MenuBarWrapper = styled.div`
   width: 100%;
@@ -73,13 +73,18 @@ const MenuLink = styled.a`
 
 const MenuBar = ({ navOpen, onNavToggle }) =>{
   return(
-    <MenuBarWrapper className={ navOpen ? 'nav-open' : 'nav-close' }>
-      <MenuLink
-        className={ navOpen ? 'nav-open' : 'nav-close' }
-        onClick={ () => onNavToggle()  }>
-        <span>Menu</span>
-      </MenuLink>
-    </MenuBarWrapper>
+    <div>
+      <MenuBarWrapper className={ navOpen ? 'nav-open' : 'nav-close' }>
+        <MenuLink
+          className={ navOpen ? 'nav-open' : 'nav-close' }
+          onClick={ () => onNavToggle()  }>
+          <span>Menu</span>
+        </MenuLink>
+      </MenuBarWrapper>
+      <MenuBarWrapper>
+        <HamburgerIcon navOpen={ navOpen } onNavToggle={ onNavToggle } />
+      </MenuBarWrapper>
+    </div>
   );
 }
 
