@@ -16,22 +16,27 @@ const MenuBarWrapper = styled.div`
 
 const MenuLink = styled.a`
   display: inline-block;
-  margin: 30px 0 0 -20px;
+  margin: 3em 0 0 -2em;
+  padding: 0 0 0 0;
   position: relative;
 
   color: ${props => props.theme.colors.primary };
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
   text-transform: uppercase;
 
   outline: 1px dashed red;
 
+  span{
+    font-size: 1.8em;
+  }
+
   &::before, &::after {
     content: "";
     display: block;
-    margin: 0 0 0 -20px;
-    width: 40px;
-    height: 4px;
+    margin: 0 0 0 -2em;
+    width: 4em;
+    height: 0.4em;
     position: absolute;
 
     left: 50%;
@@ -40,27 +45,26 @@ const MenuLink = styled.a`
   }
 
   &::before {
-    top: -10px;
+    top: -1em;
   }
 
   &:after {
-    top: -20px;
+    top: -2em;
   }
 
   &.nav-open{
     color: ${props => props.theme.colors.highlight };
 
     &::before, &::after {
+      top: -1.5em
       background: ${props => props.theme.colors.highlight };
     }
 
     &::before {
-      top: -15px;
       transform: rotate(45deg);
     }
 
     &::after {
-      top: -15px;
       transform: rotate(-45deg);
     }
   }
@@ -73,7 +77,7 @@ const MenuBar = ({ navOpen, onNavToggle }) =>{
       <MenuLink
         className={ navOpen ? 'nav-open' : 'nav-close' }
         onClick={ () => onNavToggle()  }>
-        Menu
+        <span>Menu</span>
       </MenuLink>
     </MenuBarWrapper>
   );
