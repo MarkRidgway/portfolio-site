@@ -10,7 +10,7 @@ class IndexPage extends Component {
       <div>
         <Grid>
           <Row>
-            <Col>
+            <Col xs={12}>
               <Title>Portfolio</Title>
               <p>These are some of the projects I have worked on in the past.</p>
             </Col>

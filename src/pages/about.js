@@ -5,7 +5,7 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid'
 const IndexPage = () => (
   <Grid>
     <Row>
-      <Col>
+      <Col xs={12}>
         <h1>About Me</h1>
 
         <p>in progress....</p>
