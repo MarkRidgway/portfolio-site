@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavigationList from './navigation-list';
+import { darken } from 'polished'
 
 const Nav = styled.nav`
   display: flex;
@@ -11,7 +12,7 @@ const Nav = styled.nav`
   position: absolute;
   top: 0;
   transition: left 0.3s ease;
-  background: #ccc;
+  background: ${ props => props.theme.colors.primary };
 
   &.nav-closed{
     left: -70%;
@@ -22,7 +23,7 @@ const Nav = styled.nav`
   }
 
   ul{
-    flex; 0 0 auto;
+    flex: 0 0 auto;
   }
 
   li{
@@ -32,14 +33,22 @@ const Nav = styled.nav`
   a{
     display: block;
     padding: 0.5em 1em;
-    color: #000;
+    color: ${ props => props.theme.colors.tertiary };
     white-space: nowrap;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid ${props => darken(0.1, props.theme.colors.secondary)};
     transition: all 0.3s ease;
+    background: ${ props => props.theme.colors.secondary };
 
     &.active, &:hover{
-      background: #aaa;
+      /* color: ${ props => props.theme.colors.secondary }; */
+      /* background: ${ props => props.theme.colors.tertiary }; */
+
+      background: ${ props => props.theme.colors.highlight };
     }
+  }
+
+  li:last-of-type a {
+    border-bottom: none;
   }
 
   @media (min-width: ${props => props.theme.flexboxgrid.breakpoints.md}em) {
@@ -53,7 +62,7 @@ const CloseArea = styled.div`
 
 const OffCanvas = ({ navOpen, onNavClose }) => (
   <Nav className={ navOpen ? 'nav-open' : 'nav-closed' }>
-    <NavigationList />
+    <NavigationList showHome={ true } />
     <CloseArea onClick={ () => onNavClose() } />
   </Nav>
 );

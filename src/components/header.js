@@ -14,8 +14,8 @@ const defaultTheme = {
 
 const Wrapper = styled.header`
   border-bottom: 10px solid ${props => props.theme.colors.primary};
-  margin-bottom: 1.45rem;
   padding: 1em 0;
+  background: #fff;
 `;
 
 Wrapper.defaultProps = defaultTheme;

@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import '../theme/prism-cobalt2.css'
 
 import { theme, Content } from '../utils/theme'
+import Footer from '../components/footer'
 import Header from '../components/header'
 import OffCanvas from '../components/off-canvas'
 import MenuBar from '../components/menu-bar';
@@ -16,9 +17,11 @@ const PageWrapper = styled.div`
 const Page = styled.div`
   width: 100%;
   height: auto;
+  min-height: 100vh;
   position: absolute;
   top: 0;
   transition: left 0.3s ease;
+  background: ${ props => props.theme.colors.primary };
 
   &.nav-open{
     left: 70%;
@@ -78,6 +81,7 @@ class Layout extends Component {
               siteTitle={ this.props.data.site.siteMetadata.title }
               siteTagline={ this.props.data.site.siteMetadata.tagline } />
             <Content>{ this.props.children() }</Content>
+            <Footer />
           </Page>
         </PageWrapper>
       </ThemeProvider>

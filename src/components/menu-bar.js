@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import HamburgerIcon from './hambuger-icon';
+import { IoAndroidMenu } from 'react-icons/lib/io/';
 
 const MenuBarWrapper = styled.div`
   width: 100%;
   height: auto;
-  padding: 0.5px 4em;
-  background: #ccc;
-  font-size: 10px;
+
+  @media (min-width: ${props => props.theme.flexboxgrid.breakpoints.md}em) {
+    display: none;
+  }
 
   &.nav-open{
     left: 70%;
@@ -15,76 +16,35 @@ const MenuBarWrapper = styled.div`
 `;
 
 const MenuLink = styled.a`
-  display: inline-block;
-  margin: 3em 0 0 -2em;
-  padding: 0 0 0 0;
-  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5em 1.4em;
+  color: ${ props => props.theme.colors.tertiary };
+  font-size: 1.2em;
+  cursor: pointer;
+  background: ${ props => props.theme.colors.primary };
+  transition: all 0.3s ease;
 
-  color: ${props => props.theme.colors.primary };
-  font-size: 1em;
-  font-weight: 700;
-  text-transform: uppercase;
 
-  outline: 1px dashed red;
+  &:hover, &:visited, &:active {
+    color: ${ props => props.theme.colors.tertiary };
+  }
 
   span{
-    font-size: 1.8em;
+    margin-left: 0.2em;
   }
-
-  &::before, &::after {
-    content: "";
-    display: block;
-    margin: 0 0 0 -2em;
-    width: 4em;
-    height: 0.4em;
-    position: absolute;
-
-    left: 50%;
-    background:${props => props.theme.colors.primary };
-    transition: all .3s ease-out;
-  }
-
-  &::before {
-    top: -1em;
-  }
-
-  &:after {
-    top: -2em;
-  }
-
-  &.nav-open{
-    color: ${props => props.theme.colors.highlight };
-
-    &::before, &::after {
-      top: -1.5em
-      background: ${props => props.theme.colors.highlight };
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-    }
-  }
-}
 `;
 
 const MenuBar = ({ navOpen, onNavToggle }) =>{
   return(
-    <div>
-      <MenuBarWrapper className={ navOpen ? 'nav-open' : 'nav-close' }>
-        <MenuLink
-          className={ navOpen ? 'nav-open' : 'nav-close' }
-          onClick={ () => onNavToggle()  }>
-          <span>Menu</span>
-        </MenuLink>
-      </MenuBarWrapper>
-      <MenuBarWrapper>
-        <HamburgerIcon navOpen={ navOpen } onNavToggle={ onNavToggle } />
-      </MenuBarWrapper>
-    </div>
+    <MenuBarWrapper className={ navOpen ? 'nav-open' : 'nav-close' }>
+      <MenuLink
+        className={ navOpen ? 'nav-open' : 'nav-close' }
+        onClick={ () => onNavToggle()  }>
+        <IoAndroidMenu /><span>Menu</span>
+      </MenuLink>
+    </MenuBarWrapper>
   );
 }
 

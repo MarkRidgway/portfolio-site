@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
 
-const Project = styled.div``;
+const Project = styled.div`
+  margin-bottom: 2em;
+`;
 
 const ProjectTitle = styled.h2`
   margin-bottom: 1em;

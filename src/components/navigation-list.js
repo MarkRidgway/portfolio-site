@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link'
-import { FaLinkedinSquare, FaGithubSquare } from 'react-icons/lib/fa/';
+import { FaCodepen, FaTwitter, FaLinkedinSquare, FaGithubSquare } from 'react-icons/lib/fa/';
 
 const NavList = styled.ul`
   margin: 0;
@@ -22,6 +22,7 @@ class NavigationList extends Component{
   render(){
     return(
       <NavList>
+        { this.showHome() }
         <li><a href='https://www.linkedin.com/in/markridgway/'>
           <IconOrText
             showIcon={ this.props.icons }
@@ -36,11 +37,30 @@ class NavigationList extends Component{
             text='GitHub'
           />
         </a></li>
-        <li><Link activeClassName='active' to='/about'>About</Link></li>
-        <li><Link activeClassName='active' to='/'>Blog</Link></li>
-        <li><Link activeClassName='active' to='/contact'>Contact</Link></li>
+        <li><a href='https://codepen.io/MarkJames/'>
+          <IconOrText
+            showIcon={ this.props.icons }
+            icon={ <FaCodepen /> }
+            text='CodePen'
+          />
+        </a></li>
+        <li><a href='https://twitter.com/heyridg'>
+          <IconOrText
+            showIcon={ this.props.icons }
+            icon={ <FaTwitter /> }
+            text='Twitter'
+          />
+        </a></li>
       </NavList>
     );
+  }
+
+  showHome(){
+    if(this.props.showHome){
+      return(
+        <li><Link activeClassName='active' to='/'>Portfolio</Link></li>
+      );
+    }
   }
 }
 

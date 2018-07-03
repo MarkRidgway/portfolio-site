@@ -29,7 +29,8 @@ const theme = {
 
 // Styles for elements inside content
 const Content = styled.div `
-  padding: 0px 1.0875rem 1.45rem;
+  padding: 2em 0;
+  background: #fff;
 
   h1, h2, h3, h4, h5, h6, a{
     color: ${props => props.theme.colors.highlight};
@@ -53,12 +54,14 @@ const Content = styled.div `
       color: ${props => props.theme.colors.secondary};
     }
   }
-
 `;
+
+const Title = styled.h1``;
 
 Content.defaultProps = theme;
 
 export default {
   theme,
-  Content
+  Content,
+  Title
 };
