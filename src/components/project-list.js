@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Grid, Col, Row} from 'react-styled-flexboxgrid'
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import ProjectCard from '../components/project-card';
 
 class ProjectList extends Component {
@@ -13,7 +13,8 @@ class ProjectList extends Component {
               xs={12} md={6}>
               <ProjectCard
                 title={ project.title }
-                image={ project.image } />
+                image={ project.image }
+                link={ project.link } />
             </Col>
           ))}
         </Row>

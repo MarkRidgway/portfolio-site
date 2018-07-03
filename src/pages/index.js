@@ -10,7 +10,7 @@ class IndexPage extends Component {
       <div>
         <Grid>
           <Row>
-            <Col xs='12'>
+            <Col xs={12}>
               <Title>Portfolio</Title>
               <p>These are some of the projects I have worked on in the past.</p>
             </Col>
@@ -29,8 +29,9 @@ class IndexPage extends Component {
       let key = project.node.frontmatter.title.replace(' ', '-').toLowerCase();
       let title = project.node.frontmatter.title;
       let image = project.node.frontmatter.projectImage.publicURL;
+      let link = project.node.fields.slug;
 
-      projectsArray.push({key, title, image});
+      projectsArray.push({ key, title, image, link });
 
       return projectsArray;
     }, []);
@@ -38,7 +39,7 @@ class IndexPage extends Component {
 }
 
 export const query = graphql`
-  query ProjectsQuery {
+  query ProjectsListQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: {regex : "\/content/projects/"} },
       sort: {fields: [frontmatter___order], order: ASC}
@@ -52,6 +53,9 @@ export const query = graphql`
             projectImage {
               publicURL
             }
+          }
+          fields {
+            slug
           }
         }
       }
