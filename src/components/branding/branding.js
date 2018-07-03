@@ -13,6 +13,8 @@ const Wrapper = styled.div`
   font-size: 1.25rem;
   text-align: center;
 
+  transition: font-size 0.3s ease;
+
   @media (min-width: ${props => props.theme.flexboxgrid.breakpoints.md}em) {
     font-size: 1.5rem;
   }
