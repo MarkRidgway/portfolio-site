@@ -25,8 +25,8 @@ class Header extends Component {
     return(
       <Wrapper>
         <Grid>
-          <Row>
-            <Col xs={12}>
+          <Row center='lg'>
+            <Col xs={12} lg={8}>
               <Branding
                 title={this.props.siteTitle}
                 tagline={this.props.siteTagline} />

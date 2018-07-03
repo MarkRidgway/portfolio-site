@@ -18,17 +18,15 @@ const ProjectImage = styled.div`
   }
 `;
 
-class ProjectCard extends Component {
-  render(){
-    return(
-      <Project>
-        <ProjectTitle>{ this.props.title }</ProjectTitle>
-        <ProjectImage>
-          <img src={ this.props.image } />
-        </ProjectImage>
-      </Project>
-    )
-  }
-}
+const ProjectCard = ({ title, image, link }) => (
+  <Project>
+    <Link to={ link }>
+      <ProjectTitle>{ title }</ProjectTitle>
+      <ProjectImage>
+        <img src={ image } />
+      </ProjectImage>
+    </Link>
+  </Project>
+);
 
-export default ProjectCard
+export default ProjectCard;
