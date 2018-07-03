@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
 import { WingLeft, WingRight } from './wings';
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,12 +31,7 @@ const Title = styled.h1`
   margin: 0 0 0.2em 0;
   font-size: 1.5em;
   color: ${props => props.theme.colors.primary};
-
-  a{
-    color: inherit;
-    text-decoration: none;
-    white-space: nowrap;
-  }
+  white-space: nowrap;
 `;
 
 const Tagline = styled.h2`
@@ -48,12 +42,10 @@ const Tagline = styled.h2`
 `;
 
 const Branding = ({ title, tagline }) => (
-  <Wrapper>
+  <Wrapper href='/'>
     <WingLeft />
     <LogoWrapper>
-      <Title>
-        <Link to="/">{title}</Link>
-      </Title>
+      <Title>{title}</Title>
       <Tagline>{tagline}</Tagline>
     </LogoWrapper>
     <WingRight />
