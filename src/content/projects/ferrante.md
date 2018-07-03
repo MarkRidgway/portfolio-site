@@ -1,8 +1,8 @@
 ---
-title: Romeo Rim
-order: 5
-projectImage: './images/romeo-rim.jpg'
-projectLink: https://romeorim.com/
+title: Ferrante Manufacturing
+order: 6
+projectImage: './images/ferrante.jpg'
+projectLink: https://www.ferrantemanufacturing.com/
 technologies:
   - HTML
   - CSS/SCSS
