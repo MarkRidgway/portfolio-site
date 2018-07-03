@@ -1,6 +1,12 @@
 ---
 title: Koyo Manufacturing
 order: 1
-projectImage: './koyo.jpg'
+projectImage: './images/koyo.jpg'
+projectLink: http://www.koyomachinery.com/
+technologies:
+  - HTML
+  - CSS/SCSS
+  - Javascript
+  - PHP
 ---
-Portfolio image for Koyo Manufacturing
+A manufacturing site built while at High Level Marketing from a PSD.

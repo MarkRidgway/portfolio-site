@@ -58,10 +58,33 @@ const Content = styled.div `
 
 const Title = styled.h1``;
 
+const Button = styled.a`
+  display: inline-block;
+  margin-bottom: 0.5em;
+  padding: 0.6em 1.2em;
+  color: ${ props => props.theme.colors.tertiary };
+  font-size: 1.2em;
+  background: ${ props => props.theme.colors.secondary };
+  border: 2px solid ${ props => props.theme.colors.secondary };
+  transition: all 0.3s ease;
+
+  &, &:visited, &:focus {
+    color: ${ props => props.theme.colors.tertiary };
+    background: ${ props => props.theme.colors.secondary };
+  }
+
+  &:hover{
+    color: ${ props => props.theme.colors.secondary };
+    background: ${ props => props.theme.colors.tertiary };
+  }
+`;
+
 Content.defaultProps = theme;
+Button.defaultProps = theme;
 
 export default {
   theme,
   Content,
-  Title
+  Title,
+  Button
 };
