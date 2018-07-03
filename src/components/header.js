@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid'
+import Branding from './branding/branding';
+import NavigationBar from './navigation-bar';
 
 const defaultTheme = {
   theme: {
-    site: {
-      width: '960px'
-    },
     colors: {
       primary: '#333'
     }
@@ -14,38 +13,29 @@ const defaultTheme = {
 };
 
 const Wrapper = styled.header`
-  background: ${props => props.theme.colors.primary};
-  margin-bottom: 1.45rem;
-`;
-
-const Content = styled.div`
-  max-width: ${props => props.theme.site.width};
-  margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  color: white;
-
-  a{
-    color: inherit;
-    text-decoration: none;
-  }
+  border-bottom: 10px solid ${props => props.theme.colors.primary};
+  padding: 1em 0;
+  background: #fff;
 `;
 
 Wrapper.defaultProps = defaultTheme;
-Content.defaultProps = defaultTheme;
 
 class Header extends Component {
   render(){
     return(
       <Wrapper>
-        <Content>
-          <Title>
-            <Link to="/">{ this.props.siteTitle }</Link>
-          </Title>
-        </Content>
+        <Grid>
+          <Row>
+            <Col xs={12}>
+              <Branding
+                title={this.props.siteTitle}
+                tagline={this.props.siteTagline} />
+            </Col>
+            <Col xs={12}>
+              <NavigationBar />
+            </Col>
+          </Row>
+        </Grid>
       </Wrapper>
     );
   }
