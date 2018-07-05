@@ -23,6 +23,7 @@ class NavigationList extends Component{
     return(
       <NavList>
         { this.showHome() }
+        <li><Link activeClassName='active' to='/about'>About Me</Link></li>
         <li><a href='https://www.linkedin.com/in/markridgway/'>
           <IconOrText
             showIcon={ this.props.icons }

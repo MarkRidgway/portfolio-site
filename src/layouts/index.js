@@ -1,10 +1,10 @@
+import { theme, Content } from '../utils/theme'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import '../theme/prism-cobalt2.css'
 
-import { theme, Content } from '../utils/theme'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import OffCanvas from '../components/off-canvas'
