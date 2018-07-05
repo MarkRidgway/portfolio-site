@@ -10,6 +10,17 @@ altonTheme.bodyColor = theme.colors.black;
 altonTheme.headerFontFamily = ['Merriweather', 'serif'];
 altonTheme.headerWeight = '400';
 
+altonTheme.googleFonts = [
+  {
+    name: 'Merriweather',
+    styles: ['700'],
+  },
+  {
+    name: 'Open Sans',
+    styles: ['200', '200i', '400', '400i', '700', '700i'],
+  },
+];
+
 const typography = new Typography(altonTheme);
 
 export default typography;
