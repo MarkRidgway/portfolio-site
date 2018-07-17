@@ -6,6 +6,14 @@ module.exports = {
     keywords: 'Mark Ridgway, Web Developer, Javascript, React, Angular'
   },
   plugins: [
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#E04E39`,
+        showSpinner: false,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-typography`,
