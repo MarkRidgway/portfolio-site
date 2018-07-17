@@ -6,6 +6,13 @@ module.exports = {
     keywords: 'Mark Ridgway, Web Developer, Javascript, React, Angular'
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS,
+        head: true,
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-nprogress`,
