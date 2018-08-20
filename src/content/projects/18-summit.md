@@ -1,6 +1,6 @@
 ---
 title: 18 Summit
-order: 3
+order: 4
 projectImage: './images/18-summit.jpg'
 projectLink: https://www.18summit.com/
 technologies:
