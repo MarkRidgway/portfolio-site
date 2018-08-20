@@ -1,6 +1,6 @@
 ---
 title: Salon Krishna
-order: 2
+order: 3
 projectImage: './images/salon-krishna.jpg'
 projectLink: https://www.salonkrishna.com/
 technologies:

@@ -1,6 +1,6 @@
 ---
 title: Koyo Manufacturing
-order: 1
+order: 2
 projectImage: './images/koyo.jpg'
 projectLink: http://www.koyomachinery.com/
 technologies:
