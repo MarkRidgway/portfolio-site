@@ -9,6 +9,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import OffCanvas from '../components/off-canvas'
 import MenuBar from '../components/menu-bar';
+import CornerRibbon from '../components/corner-ribbon';
 
 const PageWrapper = styled.div`
   position: relative;
@@ -19,6 +20,7 @@ const Page = styled.div`
   height: auto;
   min-height: 100vh;
   position: absolute;
+  overflow: hidden;
   top: 0;
   transition: left 0.3s ease;
   background: ${ props => props.theme.colors.primary };
@@ -61,6 +63,9 @@ class Layout extends Component {
           <Page
             className={ this.state.navOpen ? 'nav-open' : 'nav-closed' }
             onClick={ () => { this.state.navOpen ? this.onNavClose() : null } }>
+            <CornerRibbon
+              link='https://github.com/MarkRidgway/portfolio-site'
+              text='View Code!' />
             <Helmet
               title={ this.props.data.site.siteMetadata.title }
               meta={[
