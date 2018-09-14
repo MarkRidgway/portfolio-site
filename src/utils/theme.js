@@ -54,6 +54,14 @@ const Content = styled.div `
       color: ${props => props.theme.colors.secondary};
     }
   }
+
+  strong {
+    color: ${props => props.theme.colors.secondary};
+  }
+
+  em {
+    color: ${props => props.theme.colors.highlight};
+  }
 `;
 
 const Title = styled.h1``;

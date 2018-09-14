@@ -1,6 +1,6 @@
 ---
 title: React Weather
-order: 1
+order: 2
 projectImage: './images/react-weather.jpg'
 projectLink: https://react-weather.mark.world/
 technologies:
