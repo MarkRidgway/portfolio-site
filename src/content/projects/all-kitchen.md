@@ -1,6 +1,6 @@
 ---
 title: All Kitchen & Bath
-order: 4
+order: 5
 projectImage: './images/all-kitchen.jpg'
 projectLink: https://www.designstoneinc.com/
 technologies:
